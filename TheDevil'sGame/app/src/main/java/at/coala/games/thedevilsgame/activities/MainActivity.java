@@ -11,6 +11,9 @@ import android.os.Bundle;
 import android.util.Log;
 
 import at.coala.games.thedevilsgame.R;
+import at.coala.games.thedevilsgame.game.GameDataManager;
+import at.coala.games.thedevilsgame.game.GameState;
+import at.coala.games.thedevilsgame.persistence.DataAccess;
 
 /**
  * Created by Klaus Galler on 02.07.2017.
@@ -20,14 +23,18 @@ import at.coala.games.thedevilsgame.R;
 public class MainActivity extends AppCompatActivity {
 
     @SuppressWarnings("HardCodedStringLiteral")
-    private static final String MAIN_ACTIVITY = "MainActivity";
+    private static final String CLASS_NAME = "MainActivity";
+
+    private GameState gameState;
 
     @Override
-    protected final void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        gameState = GameDataManager.firstGameState();
+
         //noinspection HardCodedStringLiteral
-        Log.i(MAIN_ACTIVITY, "Activity created successfully.");
+        Log.i(CLASS_NAME, "Activity created successfully.");
     }
 }
