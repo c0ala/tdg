@@ -1,2 +1,2 @@
 # tdg
-A (not so) ordinary party drinking game
+A (not so) ordinary party game
